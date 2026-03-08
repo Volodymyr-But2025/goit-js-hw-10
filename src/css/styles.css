@@ -16,3 +16,99 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* Index page styles */
+body:has(a[href='./1-timer.html']) {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+body:has(a[href='./1-timer.html']) a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+body:has(a[href='./1-timer.html']) a:hover {
+  background-color: #0056b3;
+}
+
+/* Timer page styles */
+body:has(#datetime-picker) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.timer-controls #datetime-picker {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  max-width: 100%;
+}
+
+button[data-start]:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+button[data-start] {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[data-start]:hover {
+  background-color: #218838;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.label {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+}
+fieldset {
+  width: 250px;
+}
