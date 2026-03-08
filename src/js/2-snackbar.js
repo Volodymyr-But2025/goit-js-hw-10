@@ -15,20 +15,20 @@ form.addEventListener('submit', e => {
   const stateValue = state.value; // Буде "fulfilled" або "rejected"
 
   console.log(`Delay: ${delayValue}, State: ${stateValue}`);
-  createPromise('Result', delayValue, stateValue === 'fulfilled')
+  createPromise(delayValue, delayValue, stateValue === 'fulfilled')
     .then(res => {
-      console.log(`✅ Fulfilled promise in ${delayValue}ms`);
+      console.log(res);
       iziToast.success({
         title: 'Success',
-        message: `✅ Fulfilled promise in ${delayValue}ms`,
+        message: `✅ Fulfilled promise in ${res}ms`,
         position: 'topRight',
       });
     })
     .catch(err => {
-      console.error(`❌ Rejected promise in ${delayValue}ms`);
+      console.error(err);
       iziToast.error({
         title: 'Error',
-        message: `❌ Rejected promise in ${delayValue}ms`,
+        message: `❌ Rejected promise in ${err}ms`,
         position: 'topRight',
       });
     });

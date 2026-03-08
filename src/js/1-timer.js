@@ -18,6 +18,7 @@ const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
 let userSelectedDate = null;
+btnStart.disabled = true;
 
 // Функції
 
@@ -48,7 +49,7 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
     userSelectedDate = selectedDates[0];
-    if (userSelectedDate < new Date()) {
+    if (userSelectedDate <= new Date()) {
       iziToast.error({
         title: 'Error',
         message: 'Please choose a date in the future',
@@ -73,7 +74,7 @@ function onBtnStartClick() {
 
     if (time <= 0) {
       clearInterval(intervalId);
-      btnStart.disabled = false;
+
       input.disabled = false;
       return;
     }
